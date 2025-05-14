@@ -2,26 +2,46 @@
     <div>
         <label>Check-In date: </label>
         <input type="date" formControlName = "checkInDate"> 
+        <div *ngIf="reservationForm.get('checkInDate')?.invalid
+        && reservationForm.get('checkInDate')?.touched">
+            Check-In Date is required !!!
+        </div>
     </div>
 
     <div>
         <label>Check-Out date: </label>
         <input type="date" formControlName = "checkOutDate">
+        <div *ngIf="reservationForm.get('checkOutDate')?.invalid
+        && reservationForm.get('checkOutDate')?.touched">
+            Check-Out Date is required !!!
+        </div>
     </div>
 
     <div>
         <label>Guess Name: </label>
         <input type="text" formControlName = "guessName">
+        <div *ngIf="reservationForm.get('guessName')?.invalid
+        && reservationForm.get('guessName')?.touched">
+            Guess's name is not empty !!!
+        </div>
     </div>
 
     <div>
         <label>Guess Email: </label>
         <input type="email" formControlName = "guessEmail">
+        <div *ngIf="reservationForm.get('guessEmail')?.invalid
+        && reservationForm.get('guessEmail')?.touched">
+            Guess's email is not empty !!!
+        </div>
     </div>
 
     <div>
         <label>Room Number: </label>
         <input type="number" formControlName = "roomNumber">
+        <div *ngIf="reservationForm.get('roomNumber')?.invalid
+        && reservationForm.get('roomNumber')?.touched">
+            Room's number is required !!!
+        </div>
     </div>
 
 
