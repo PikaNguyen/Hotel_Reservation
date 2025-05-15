@@ -1,19 +1,36 @@
 <app-home></app-home>
 
-<h2>Reservation List</h2>
+<h3 class="mt-5 mb-2">Reservation List</h3>
 
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Guess</th>
+            <th>Email</th>
+            <th>Room No.</th>
+            <th>Check-In</th>
+            <th>Check-Out</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reservation of reservations; let index as i">
+            <td> {{reservation.guessName}} </td>
+            <td> {{reservation.guessEmail}} </td>
+            <td>{{reservation.roomNumber}} </td>
+            <td> {{reservation.checkInDate}}</td>
+            <td>{{reservation.checkOutDate}}</td>
+            <td>
+                <button class="btn btn-danger mx-1" (click)="deleteReservation(reservation.id)" >Delete</button>
+                <button class="btn btn-sm btn-secondary mx-1" [routerLink]="['/edit', reservation.id]" >Edit</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
 
 <ul *ngIf="reservations.length; else noReservation">
-<li *ngFor="let reservation of reservations; let index as i">
-    Guess: {{reservation.guessName}} <br>
-    Email: {{reservation.guessEmail}}    <br>
-    Room No. {{reservation.roomNumber}}   <br> 
-    Check-in Date: {{reservation.checkInDate}}   <br> 
-    Check-out Date: {{reservation.checkOutDate}}     <br> 
-    <button (click)="deleteReservation(reservation.id)" >Delete</button>
-    <button [routerLink]="['/edit', reservation.id]" >Edit</button>
-<br> 
-</li>
+
 
 </ul>
 
