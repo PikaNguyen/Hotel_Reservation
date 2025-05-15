@@ -24,6 +24,7 @@ export class ReservationService {
   }
 
   addReservation(reservation: Reservation) :void {
+    reservation.id = Date.now().toString();
     this.reservations.push(reservation)
     console.log("Add successfully reservation and list reservations now:  \n")
     console.log(this.reservations)
