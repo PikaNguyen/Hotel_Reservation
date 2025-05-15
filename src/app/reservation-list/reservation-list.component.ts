@@ -22,8 +22,4 @@ export class ReservationListComponent implements OnInit {
   deleteReservation(i: string){
     this.serviceReservation.deleteReservation(i)
   }
-
-  updateReservation(reservation: Reservation){
-    this.serviceReservation.updateReservation(reservation)
-  }
 }
