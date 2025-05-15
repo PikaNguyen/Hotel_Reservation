@@ -11,7 +11,7 @@ export class ReservationService {
   //CRUD
 
   constructor(){
-    let savedReservation = localStorage.getItem("reservation")
+    let savedReservation = localStorage.getItem("reservations")
     this.reservations = savedReservation ? JSON.parse(savedReservation) : []
   }
 
