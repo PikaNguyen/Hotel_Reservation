@@ -1,6 +1,9 @@
 # HotelApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
+![image](https://github.com/user-attachments/assets/a5d77970-7e27-4c51-81d8-429959d9336b)
+
+## Using bootstrap@5.3
 
 ## Development server
 
